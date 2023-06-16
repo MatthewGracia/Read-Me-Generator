@@ -1,10 +1,10 @@
-// Imported required packages
+// All Imported Packages from NPM
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// Array of questions for user input
+//Array for users that ask for inpput questions
 const questions = [
   {
     type: 'input',
@@ -56,12 +56,12 @@ const questions = [
   },
 ];
 
-// Function to write README file using the user input
+// Function to write README 
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-// Function to initialize app
+// Function to initialize the web application
 function init() {
   inquirer.prompt(questions).then((inquirerResponses) => {
     console.log('Generating README...');
